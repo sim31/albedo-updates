@@ -74,7 +74,7 @@ str="s/.*<style .*/(insert $path here)\n&/"
 sed -i "$str" index.md.html
 
 "${EDITOR:-vi}" $path index.md.html
-read -p "Commit and push? " -n 1 -r
+read -p "Commit and push? [y/N] " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
