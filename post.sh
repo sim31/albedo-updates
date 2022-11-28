@@ -70,7 +70,7 @@ echo "<meta charset="utf-8" emacsmode="-*- markdown -*-"> <link rel="stylesheet"
 ### (skeleton)
 
 ## Include in index.md.html
-str="s/.*<style .*/(insert $path here)\n&/"
+str="s/.*UPDATES HERE \*DON'T CHANGE THIS LINE\* -->.*/&\n(insert $path here)\n/"
 sed -i "$str" index.md.html
 
 "${EDITOR:-vi}" $path index.md.html
