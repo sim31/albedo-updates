@@ -1,0 +1,25 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2022-11-28
+Today I refined a data model (class diagram) and some behavioural details for the solidity smart contracts.
+
+One of the questions I've been having previously is how to separate internal consensus process of a fractal (like Eden+Fractal) from consensus process of a fractal blockchain. It seem to me that such separation is necessary, because purpose of former is for fractal to arrive at decisions, whereas purpose of the latter is more about the world coming to consensus about what the fractal already decided. One is about helping a fractal reach consensus and the other is about signalling it to the world. I plan to write a bigger post about this separation in the future.
+
+Now it is finally getting clearer how this separation will be reflected in smart contracts:
+1. A smart contract representing a state transition function of a fractal;
+  * It takes a sequence of transactions from fractal members and computes a new state of a fractal;
+  * This is where logic relating to functionalities of Eden+Fractal would be;
+2. A smart contract implementing consensus process of a fractal chain;
+
+The proper analogy would be a smart-contract-enabled blockchain like Ethereum and smart contracts on it: the second component above implements a blockchain, the first implements custom smart contracts on it.
+
+I expect the first to change more often according to the desires of fractal members, whereas the second is more technical and hopefully more stable.
+
+In the second I plan to implement something I'm currently calling: TaPoA (transactions as a proof-of-authority). An consensus process inspired by Larimer's TaPoS. More detailed description is coming, but the idea is that blocks will be confirmed (finalized) by fractal members creating transactions that reference them.
+
+Setting up solidity development environment and starting to write code. Will share a github repo soon.
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
