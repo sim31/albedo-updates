@@ -1,0 +1,25 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2022-11-29
+One of the things I was trying to figure out for the last couple of work sessions, was how nested fractals (or other kind of DAOs will work) in my model. 
+![Figure [class-model]: Firmament class model](resources/firmament-class-model.png style="max-width:900px")
+![Figure [object-model]: Firmament object model](resources/firmament-obj-model.png style="max-width:900px")
+
+I think the ideal fractal governance should consist of smaller fractal DAOs grouping to form higher level fractal DAOs, where delegates from smaller fractals are making decisions in the higher level fractal.
+
+I finally made a breakthrough and am now more clear than ever how this would be implemented in my model.
+
+Two sketches here try to paint a picture how it will work. The boxes in fig. 2 are blocks of different fractal chains.
+
+So far I'm very happy with this, because it is simple yet powerful. It is powerful because it can be used for more than just modeling fractal DAOs. For example, I'm planning to implement fractal user accounts in this model as a DAO of user devices. From the perspective of this model user account will be just another DAO with the same interface, but for the user it means free multi-factor authentication for his account. If you don't understand what I'm talking about, please be patient, I will definitely explain these things in docs once this is more ready.
+
+[Started implementing this model in code](https://github.com/sim31/firmament-contracts/commit/b338cfbbce6ce8f6afbb3f3217bdbc8ccf68b434).
+
+I was struggling for some time to find another name for "fractal blockchains" term I've been using. Problem with "fractal blockchains" term is that it brings up associations with fractally, but, like I just mentioned, this system can be used for more than just fractally style DAOs. It could be used for any human-centric DAO and maybe even permissioned normal-speed blockchains. 
+
+The new name is "Firmament". Will explain motivation behind the name at a later time.
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
