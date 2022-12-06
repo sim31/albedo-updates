@@ -1,0 +1,18 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2022-12-06
+Continued improvements on firmament smart contract design. Realized that I was trying to protect from cases where more than 1/3rd of participants are faulty, even though generally not a lot can be guaranteed in these cases. These attempts at protections are costly though, so I think I'm going to get rid of them.
+
+The way to think about fractal chains smart contract is that it is a client of a consensus process that consensus participants of a fractal chain run. It is up to consensus participants (participants of a fractal) to make reach consensus and ensure that they output the same value (value that represents their consensus). Client smart contract assumes that participants who are not able to ensure that are faulty. If more than 1/3rd of participants are faulty then client smart contract cannot ensure ability to extend the chain. If more than 2/3rds of participants are faulty (Byzantine), different instances of client smart contract might output different chains. But if less than 1/3rd of participants are faulty then both safety and liveness are ensured. These guarantees are pretty standard as far as I know. PBFT for example seems to have the same kind of guarantees for client of a consensus service [^1].
+
+This plus some other improvements makes the whole system simpler and easier to understand and reason about.
+
+Tomorrow I hope to finally finish drafts for all main types of fractal chains.
+
+
+[^1]: https://pmg.csail.mit.edu/papers/osdi99.pdf
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
