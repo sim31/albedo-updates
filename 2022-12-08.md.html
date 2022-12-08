@@ -1,0 +1,18 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2022-12-08
+I'm now implementing all the details I skipped over in my drafts. 
+
+Realized that I don't need DeviceChain. Chains controlled by keys will simply be modeled as a type of confirmer, which has to have a signature on a block it confirms. Other type of confirmer is a smart contract.
+
+Implemented a fraud proof technique to prove that a fork has happened to the contract that manages the chain in question. This will make it possible for client blockchains [^1] to be aware of fork and stop updating the faulty chain. So other on-chain smart contracts that might be using fractal's state will stop using the fractal chain that is faulty.
+
+Most recent work is now in [master branch](https://github.com/sim31/firmament-contracts/commits/master).
+
+[^1]: By "client blockchains" I mean normal blockchains like Ethereum / EOS which will have these client smart contracts I'm currently creating, which will validate blocks and state of a fractal blockchain.
+
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
