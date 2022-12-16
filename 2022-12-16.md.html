@@ -1,0 +1,13 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2022-12-16
+Fixed contract tracing issue. Now it is a lot easier to figure out why tests are failing. The issue was with how I was importing solidity files from other libraries (installed as node_module's).
+
+Passed initial tests to deploy. Noticed that deployment takes a lot of gas, and I think I'll need to do one additional check in constructor which requires hashing (this means that it will take even more gas). Not solving that now, the first target will be browser and it shouldn't be a problem there. Will do optimizations for on-chain version later. And before doing them, I should check how much gas normal operations take (not deployment).
+
+Plan to work on unit tests for encoding / decoding values in fractal blocks, since all the errors in tests so far were in that area.
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
