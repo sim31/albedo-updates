@@ -1,0 +1,29 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2022-12-21
+Decided to refactor contract a bit before continuing with the tests. [This commit](https://github.com/sim31/firmament-contracts/commit/c0d0e89e40fa41a7f9a25f515eaf1afac898d79f) message summarizes it:
+
+>Refactor
+    
+    * Move implementation of FirmChain to library, so that firmchains for
+      accounts and fractals can be created cheaply;
+    * Replace command patter for specifyig operations block represents, with
+      array of Call structure values, which simply specify external calls to make
+      * This will make encoding / decoding for clients simpler;
+      * Can be used to achieve most of the use cases of a fractal without
+        changing any code of FirmChain
+        * To confirm external chain, simply specify the corresponding call;
+        * If you want a fractal to have any other state simply implement it
+          as a separate contract and make calls to it in blocks. Can
+          implement it in the same contract, but it won't be part of
+          implementation  performed by library
+    
+    So FirmChain becomes like a multisig account. Difference from multisig
+    accounts in EOS is that it does not depend on external chain determining
+    order of actions (if multisig participants are approving conflicting
+    actions for example).
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
