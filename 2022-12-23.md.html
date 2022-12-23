@@ -1,0 +1,14 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2022-12-23
+Started writing tests for core logic of fractal blockchains (I call them FirmChain(s) now). Passed FirmChain deployment tests. Deployment is not trivial for FirmChain. I want constructor arguments to be such that create2 addresses of smart contracts of FirmChains(s) to have certain properties.
+
+Discovered an issue with how I was initializing state of these chains in contract constructor. Specifically I was depending on external calls being specified in genesis block in order to initialize the consensus confirmer set. This meant that these external calls have to be made to itself, and you cannot do that in constructor. Resolved by adding constructor arguments to initialize confirmer set instead of depending on external calls. This is also good in that we will save some gas by not making external calls.
+
+I'm now thinking of adding additional field in a block where confirmer operations (adding / removing them) will be specified. For the same reason of saving gas...
+
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
