@@ -1,0 +1,18 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-01-03
+Back from the break.
+
+Started to work on consensus building tool based on [telegram web client](https://github.com/Ajaxy/telegram-tt).
+
+The main component of albedo project this season is firmament smart contract and app (so it does not involve a consensus building tool), but I think this will be the best way to demonstrate the advantages of my design.
+
+It does not matter if consensus building app has a centralized component as long as consensus signalling app (firmament) is separate from consensus building and is decentralized and trustless. People can use any means to build consensus they want and should not be locked in to any particular tool. Using existing services like telegram to build consensus will be much cheaper and it does not mean that users will have to trust telegram servers. If particular tool stops working, users can choose some other (while consensus signalling component remains constant).
+
+So first I tested if deployment of [telegram Web Z](https://github.com/Ajaxy/telegram-tt) to github pages works. [Here's my deployment](https://sim31.github.io/telegram-tt/). Next I added a button in group chats to create polls which help rank members of a group chat (fractally style). It's not yet deployed but code is published [here](https://sim31.github.io/telegram-tt/). Next I will probably try to add functionality to create break out groups from larger group chat.
+
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
