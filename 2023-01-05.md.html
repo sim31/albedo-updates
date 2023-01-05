@@ -1,0 +1,16 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-01-05
+I decided to focus first on a tool for individual break-out groups to use (to build consensus). That alone should be a huge help, compared to how we build consensus now. Will work on break-out group generation later.
+
+An important part of this workflow with separate consensus building and consensus signalling tool is for these tools to be able to interface with each other. This can be done by consensus building tool generating a link to consensus signalling tool and this link encoding information about the consensus that was determined by the consensus building tool.
+
+With this in mind I forked a codebase of a [consensus signalling tool which Eden Fractal uses for consensus](edenfracfront.web.app) and added functionality for it to sync its input fields with a query string (which is part of a URL).
+
+While at it I made another addition to improve the robustness of Eden Fractal meetings. Now computing a hash of the inputs in the web form and displaying first 8 symbols of it. This can be used by participants to check if they are submitting the same values. This can help address one very common problem in Eden Fractal meetings where people, by mistake, submit differing consensus results.
+
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
