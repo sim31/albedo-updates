@@ -1,0 +1,45 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-01-06
+Realized that trying to make a proper consensus building app out of telegram client will require quite a bit of work if we want to make it trully robust. Also my initial idea of how to do it feels kind of hackish. It's like it is using telegram service not quite the way it was intended to.
+
+Not giving up on this, but will just change how I do this a bit. Instead of every user having to use this special telegram client, it will instead only be required by one participant of the group which acts as an administrator. So this telegram client will basically be an administrator client. All other users will be able to use whatever telegram client they normally use. 
+
+Wrote a rough description of the workflow
+
+### Telegram based consensus building workflow
+1 person is administrator. Only he must use special tg client.
+
+Administrator presses a button to start the meeting. Administrator sees a prompt explaining what will happen and especially specifying what messages administrator client will create automatically. Message is created in the chat explaining what will happen and asking users to reply with "I join" if they wish to participate.
+
+Once enough people signal joining, administrator sees a button to create break-out groups. Once pressed break-out groups are created. Message is posted with break-out groups listed and a link to each break-out group. Invite links are such that people need approval from the administrator to join.
+
+Participants click links. Administrator client automatically approves participants who are joining break-out groups they belong to and rejects otherwise.
+
+If it's a meeting for EOS accounts, then administrator client will create message in each break-out group asking to specify eos account names by replying to this message.
+
+Then administrator client also creates polls for rankings and delegate.
+
+Then administrator can click show results for each group manually. It generates a link to edenfractfront.web.app (if it's an eos based fractal) and sends a message to the group summarizing the results and sharing the link (if it's an eos based fractal).
+
+Chat participants should also be able to trigger the results message themselves somehow. Maybe by writing /done command.
+
+### Advantages of this
+* Any telegram client can be used by normal participants;
+* Simplifies the workflow very much. The administrator account basically acts as a bot;
+* Less intrusive to the normal telegram workflow. Each message (with the exception of maybe the last /done) is part of the conversation.
+* No need to try to make the administrator client super user friendly. It can start becoming useful much earlier.
+* A simple way to prevent accounts joining breakout groups they don't belong in, which works even without any keys or sharing of signatures;
+* No problem with multiple users creating polls, etc, since there's a separate role for the moderator.
+* Because of the simpler design and no need to make the new client app super friendly, I think I will be able to create it well enough much faster;
+  * So not wasting too much time on something that is likely to be temporary anyway;
+
+---
+
+Changes, I made yesterday, to EdenFractal consensus signalling are now [deployed](https://edenfracfront.web.app/)!
+
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
