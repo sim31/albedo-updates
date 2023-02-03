@@ -1,0 +1,17 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-02-03
+Decided to use [hyper hyper space](https://hyperhyper.space/) to implement firmament consensus signalling app. This wasn't an easy decision for me, because I considered different alternatives for some time now (hypercore, IPFS / Agregore even SSB). But I think HHS will offer the most user friendly experience - no need to install any apps. There were few concerns with HHS, like how it will scale when there are large number of peers connecting to the same space... But decided that at this point priority is a proof-of-concept of idea itself. I'm pretty sure there are plenty of scalability solutions, which can be applied later.
+
+I'm planning to have 1 space - 1 FirmChain by default. For higher level FirmChains that means that they will have to share blocks of lower level chains within them. Participants of lower level chains will have to bring blocks up from space of lower level chain to higher level chain.
+
+HHS spaces will basically be addresses where peers meet to share blocks and signal their view of FirmChains (latest block). Addressing will be done use smart contract addresses of FirmChains.
+
+Excited about potential for FirmChains used for creating a name system. This signalling app will probably have something like a url bar where you will be able to find any resource named by the root FirmChain or any child chain of it.
+
+I'm currently drafting an UI design for this app. Want to finish up a couple of pages, then will probably share here.
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
