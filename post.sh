@@ -64,6 +64,8 @@ echo "<meta charset="utf-8" emacsmode="-*- markdown -*-"> <link rel="stylesheet"
 # $title
 
 
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style="max-width:1200px") -->
+
 <style class="fallback">body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
 <!-- Markdeep: --><script src="https://casual-effects.com/markdeep/latest/markdeep.min.js?" charset="utf-8"></script>
 " > $path
