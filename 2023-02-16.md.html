@@ -1,0 +1,19 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-02-16
+Setting up client side routing for FirmSignal. Will then try to implement setting up a chain and the rest of the functionality locally (without sharing blocks at first).
+
+Now it might be funny at this point, but I again switched my decision for what p2p network to use to share blocks from the browser. Decided again for agregore / IPFS. Some of the points that made me change my opinion:
+* libp2p / IPFS seems much more established and stable they HHS (hyper hyper space);
+* IPFS / libp2p model seems to be made for this kind of use case. Content addressing make so much sense for this app;
+* This app will need to use something like IPFS for larger files anyway. It will be easier to provide for more seamless user experience if it's all one network;
+* From what I know, the way content sharing in *currently* HHS works, every peer seeks to retrieve all valid content from a space. I'm afraid this might not scale well for my model. IPFS will provide for much more flexibility. In the future this might especially be useful, if peers want to do partial validation of a blockchain for example (up to a certain block in the past for example).
+
+So agregore / IPFS seems like a fundamentally a more solid choice at this point. The tradeoff is that users will have to install an app and in the beginning it will only work on desktop. But these are solvable issues and for a proof of concept the advantages above seem more important.
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
