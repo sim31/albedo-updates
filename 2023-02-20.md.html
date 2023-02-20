@@ -1,0 +1,23 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-02-20
+Figuring out how to run EVM in the browser. A bit more coplicated than I first expected.
+
+The two main options are:
+* ethereumjs/vm
+* Ganache
+
+Ganache provides the whole local Ethereum network to do development on. It seems too much for this use case, so I first tried ethereumjs. But the documentation for how to run it in browser is very sparse, an I encountered multiple errors. Some of them seem to be related with [create-react-app and the fact that it seems to be abandoned as a project](https://github.com/facebook/create-react-app/issues/11756). Will probably have to consider to move from CRA (create-react-app) to something else, eventually.
+
+But then on closer look at Ganache, it looks like some of its extra features might actually be useful for firmsignal. Furhtermore, it's much more clearer how to do certain things I need in Ganache, than in ethereumjs/vm.
+
+Will try to deploy firmcontracts in ganache instance run in browser tomorrow.
+
+
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
