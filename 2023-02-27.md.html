@@ -1,0 +1,25 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-02-27: Gas costs
+One of the commitments for this Pomelo season was to measure the gas costs of firmament contracts. This is relevant for DAOs which would like to run their blockchain on normal EVM-enabled blockchains. 
+
+So here it is.
+
+![Figure [Gas costs]: Gas](resources/gas1.png style=max-width:1200px)
+
+At current gas prices on Ethereum L1, this would be the average cost in USD (on ETH L1):
+* extConfirm: ~6 USD
+* finalize: ~7.76 USD
+* execute: ~6.84 USD
+* executeAndFinalize: ~10 USD
+
+The `extConfirm` action would have to be performed once per FirmChain block, per each firmchain account. Other three actions would have to be performed only once per FirmChain block (so once per week if consensus meetings happen once every week).
+
+Some important context to take into account:
+* Simple token transfer on ETH L1 currently takes around 2.7 USD. There are plenty of other EVM enabled platforms where its much cheaper. So choice of a platform can bring the cost down (maybe to even under ~1 USD per week).
+* I believe there is a lot of room for optimizations here. I did not focus on bringing the gas cost down this season, but I believe that if there's demand, there will be ways to improve the smart contracts to cost less.
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
