@@ -1,0 +1,62 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-02-28: Pomelo season summary
+Before last season I committed to 7 deliverables. Will go through the status of each of those here.
+
+#### 1. Solidity smart contract acting as validator of fractal blockchain
+*Status: done*
+
+Repository: https://github.com/sim31/firmcontracts
+
+#### 2. Measurements of cost to run this smart contract on EVM enabled chains
+*Status: done*
+
+Results are published here: https://sim31.github.io/albedo-updates/#2023-02-27:gascosts
+
+#### 3. Applications helping users create fractal blockchain for their DAO, validate its blocks and publish them
+*Status: in progress*
+
+Repository: https://github.com/sim31/firmsignal/
+
+This application is currently close to the point where fractal blockchain can be created as well as blocks can be created and validated locally. I hope to be able to demonstrate that functionality in the next coming weeks. There will then still be some work needed to then publish these blocks on IPFS and other chains.
+
+#### 4. Example smart contracts on Ethereum that use consensus of fractal chains to bootstrap other applications
+*Status: done*
+
+A token where the issuer can be a fractal chain: https://github.com/sim31/firmcontracts/blob/master/contracts/IssuedToken.sol
+
+A non-transferrable version of the same token: https://github.com/sim31/firmcontracts/blob/master/contracts/IssuedNTT.sol
+
+These are simple versions of ERC-20 token, with a simple addition of “mint” action which can be called by “issuer” set during the creation of a token. The point is that issuer can be any other smart contract and fractal blockchains are implemented as simple EVM smart contracts, which can send messages to other smart contracts (which means that consensus of a fractal chain can be the issuer). This is a great illustration of how easily fractal blockchains can integrate with existing EVM platforms.
+
+#### 5. Example of fractal blockchain-based naming system
+*Status: almost done*
+
+The smart contract part of this task is done and is here: https://github.com/sim31/firmcontracts/blob/master/contracts/Directory.sol
+
+This smart contract allows any account or smart contract to set a link to any folder on IPFS. Fractal blockchain can use this to point to a folder that names everything that is important to it: its dApps, account names of its users, and so on. This again might look like it is too simple, but that’s kind of the point. That’s how easy it is to do certain things using fractal blockchains pattern. No need for complex on-chain naming systems.
+
+However, when committing to this, I had in mind a user-facing application that would demonstrate the benefits of this to the user. This is yet to be done but should be easy to do once task 3 is finished.
+
+#### 6. Appropriate documentation for the items above
+*Status: not done*
+
+Haven’t properly started this. Will probably do this after task 3 is done to the point where others can use it.
+
+#### 7. Bonus: Fractalgram!
+Before the start of this season, I promised to “try to explore consensus reaching tools (like voting and Eden elections) for human-centric DAOs and their integration with block publishing tool (described in point 3 above).” The reason I wanted to do this was because I think it is likely that the fronted I’m working on will only be a tool to signal consensus once people already have it. Organizations will still need tools to vote and other helpers in order to reach consensus. Fractals blockchains idea is useless without people being able to reach consensus.
+
+There was nothing I was aware of, which was ready to support fractally-style consensus-building which I was most interested in. Therefore, I started looking for the easiest way to create something like this in the shortest time possible. This led me to consider using existing chat apps like Telegram. They already have functionality to create polls and polls can be a basic building block to build any kind of consensus. Also, I think it makes a lot of sense to base consensus-building app on a chat (because chats are very useful when building consensus - sharing links, etc).
+
+This led to Fractalgram! This is an alternative Telegram web client, tailored to help host fractally or Eden-style consensus meetings. You can read the intro post, which explains how to use it here. The actual app is at: https://fractgram.web.app/
+
+It also tested a way to integrate with fractal blockchains by integrating with the current eden fractal consensus signalling fontend.
+
+I demonstrated Fractalgram to EdenFractal community and received great feedback. It has successfully been used in many break-out rooms since then.
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
