@@ -1,0 +1,24 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-03-15
+I think I've figured out how URLs will work in the firmament. Couple of examples:
+* `firm://tadastadas25.eos.ef` - account tadastadas25 on EOS, where eos is a consensus process (blockchain) as named by a consensus process `ef`.
+* `firm://tadas25.telegram.ef` - link to username `tadas25` on platform "telegram" as named by consensus process EF.
+* `firm://<btc-address>.btc.ef` 
+* `firm://btc.ef/blocks` - link to block explorer of bitcoin as named by `ef`.
+* `firm://0x1f9090aae28b8a3dceadf281b0f12828e676c326/home` - folder 'home' as named by a consensus process with address `0x1f9090aae28b8a3dceadf281b0f12828e676c326`.
+* `firm://some-fractal.0x1f9090aae28b8a3dceadf281b0f12828e676c326/home` - folder 'home' as named by a consensus process `some-fractal` as named by `0x1f9090aae28b8a3dceadf281b0f12828e676c326`
+
+The component before the path (domain / subdomain part) specifies a chain in the hierarchy of chains (as perceived by the top chain).
+
+[The component before path in the url is called "authority" in URL specification](https://en.wikipedia.org/wiki/URL). This fits this model perfectly, because I use that part of URL here to specify what consensus process is used to provide the names specified in the path.
+
+The two last examples are examples of absolute paths. All the other examples assume that browsers of users sharing the link are configured to use the same root FirmChain(s?) as root authority.
+
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
