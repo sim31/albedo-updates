@@ -1,0 +1,43 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-03-17
+I decided to restructure priorities and requirement for the deliverables of this season. I was trying to do too much by trying to make the tools applicable to any DAO. It's probably better to focus on a single DAO mechanism and generalize later if needed. This makes the next steps much clearer and makes much more likely that I will have something worth demoing by the end of this season.
+
+More notes from today:
+
+* Consensus building part is still lacking in tools for firmament. Specifically break-out room results need to be aggregated and confirmed somehow.
+  * Building my own will require building consensus protocols;
+  * So easiest way is to continue to expand fractalgram;
+* Previously I thought that for fractalgram to be a fully fledged consensus building tool to be used with firmsignal, that it would have to do break-out room generation. Now I realize that is false - you simply need break-out rooms to be able to post results to the parent group and then a moderator (using fractalgram) to aggregate the results. This drops a lot of work off my shoulders! Tg groups for break out groups will still have to be created manually, but that's not too hard.
+* Fractalgram also makes sense for helping reach consensus on a genesis block.
+* State display is not absolutely required for the first deliverable in PoC. You can simply publish blocks in eth test chains and use their block explorers!
+* So firmsignal in the initial version (which will conclude MVP for the first deliverable) will only need to:
+  * Show a block based on url
+  * Show other confirmers checking out the same block
+    * Now I'm starting to think that pressing `confirm` should act like pre-commit (or however it is called) message. Then the device of the user would wait for other pre-commit messages and only sign the latest block when threshold pre-commits. In other words apply PBFT, except without the need for leader re-election (because people can choose  to pre-commit any block on IPFS they want (no need for one creator of a block). Or rather creator of a block is determined by social consensus as expressed by everyone pressing that link
+    * But this could be optional for the MVP. Rely on social consensus fully in the inital version. This is something for the future to make it more robust.
+  * Allow confirming and publishing on other blockchains
+  * Create a new account
+  * Creating a genesis block (this will be easy with the help of fractalgram)
+  * Create a new block manually
+    * Supported messages:
+      * Submit ranks
+      * Set directory by uploading it from the filesystem
+  * Should display historical blocks and messages as well
+  * Ability to checkout and validate different chains (validation part of deliverables)
+    * This is optional since you will be validating the chains you are participating in.
+* Workflow for creating new firmchain accounts
+  * It's up to break-out rooms to integrate the new users in their room
+  * This will happen like this:
+    * Administrator of the group generates a link (using fractalgram) for new users to click to create an account. This takes the users to a form which will already have all the details filled in: account name (from telegram, tg username or user id - from telegram). User can change these details or leave the same. Form also generates firmchain and IPNS keys. User clicks ok. Then it dislays two options: copy displayed message back to telegram group or press fractalgram link where they login and where message to be posted is already displayed. The message includes a signature with newly generated keys and all the account info which will be used to create a new account in a block. After break-out room consensus is done, this account info is posted back to the main room.
+* Still need to figure out how the naming system part of PoC will look like, but I should start with the above and see how much time is remaining after that.
+* Now higher-level firmchains for now;
+
+
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
