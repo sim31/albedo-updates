@@ -1,0 +1,22 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-03-24
+Working on smart contracts needed to host Eden+Fractal process on FirmChain. Want to strike balance between making it easy to use from the frontend and not making gas costs too high.
+
+Also clarified the high-level workflow for EdenPlusFractal process. In the process I figured out how to avoid requiring new users to create any accounts. Initially I though FirmChain accounts will be needed to participate, which even though are much easier to create than accounts of normal blockchains, still introduce some friction. Now I realized that confirmers (consensus participants) of FirmChain can create an account for new users and have them claim it whenever they are ready. In the meantime these users would simply be identified by a telegram account name.
+
+The claiming of an account will happen by user clicking a link to firmsignal (main frontend right now for firmament), which then generates all the needed keys and redirects to fractalgram. Fractalgram then prompts the user to share the public keys through message in telegram. This way the telegram account authorizes the new FirmChain account.
+
+This makes sense, because if you think about it all systems / platforms use some external account systems to bootstrap new accounts. Centralized apps typically use email or facebook or google for example. This is required for FirmChains even if they are p2p, because this DAO has to be careful about what it introduces into its consensus participant set. 
+
+You could say that typically dApps use blockchain accounts to bootstrap. But I would argue that this system I'm creating has advantage over them by using an app from the more traditional world. Messaging apps like Telegram are more familiar to non-blockchain people, and Telegram will be enough to start participating here. **Using FirmChain DAOs will be able to onboard users *gradually* into firmament and then from firmament back into normal blockchains!**
+
+Fractalgram route might pay off more than I expected!
+
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
