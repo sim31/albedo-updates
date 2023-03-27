@@ -1,0 +1,85 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# Introduction
+Albedo is an initiative to research and develop healthy communication methods between human-centric[^1] *decentralized autonomous organizations* (DAOs) and traditional blockchains. This includes researching and developing protocols and tools for human-centric DAOs to become truly autonomous and fully interoperable with blockchains.
+
+## The problem
+<!-- TODO: acknowledge fractally for this claim -->
+What we typically call a DAO is usually not really *autonomous* and therefore not a true DAO[^2]. That's because so called DAOs are typically created as smart contracts on a blockchain, which means that a blockchain is, for all practical purposes considered the one and only source of truth for the state of a DAO. The blockchain itself has its own governance mechanism - in sense it is its own DAO. Therefore, DAOs which build on other chains are typically owned by other DAOs and therefore they are not truly autonomous.
+
+This nuance might not seem to have much practical significance, but only if we assume that blockchains are perfectly secure and only until you meet people who want to use blockchain inspired DAO mechanisms like [fractally](https://fractally.com/), but don't know which chain to use. These people might not be technical and might not be coming from the crypto world, but implications of choosing one or other underlying blockchain for a DAO might have a lot of technical implications, which further lead to security and governance implications for the future of a DAO. The key issue here is that migrating an active DAO from one chain to another is not trivial and might lead to a fork of a DAO (so you cannot just use what works now and just switch whenever it stops working)[^3]. Furthermore, security of a DAO governance mechanism starts depending on security of a blockchain governance, which complicates this choice even more. In other words, DAO creators, besides having to decide details of their governance mechanism have to additionally be blockchain experts.
+
+This is the primary problem that Albedo project sets out to solve. It's an attempt to decouple human-run governance systems like [Eden](https://edeneos.org/) and [fractally](https://fractally.com/) from underlying blockchains so that the ultimate DAO framework could be created, where any non-technical person could create a DAO easily and in a way that does not give up any control of a DAO to any external consensus process run by external governance mechanisms (like blockchains).
+
+Once you have a DAO which is autonomous, we can start talking about it affecting the world around it (otherwise what's the point of autonomy?). One desirable use case is positively affecting governance power structure of existing blockchains. This is especially relevant for human-centric DAOs. They have something that traditional blockchains lack: ability to judge quality of human work as opposed to just quantity of some resource (which leads to centralization). On the other hand traditional blockchains have a lot of features (like speed and availability) human-centric DAOs could use as well. This brings us to the second problem that Albedo sets out to solve: developing communication mechanisms between *autonomous* human-centric DAOs and traditional blockchains, so that it works optimally for both sides.
+
+## Solution: Part 1
+How can a DAO become truly autonomous? There's an obvious answer - it can run its own totally independent consensus process. It could run its own blockchain.
+
+Of course running a blockchain is typically expensive and requires infrastructure. This would make this path unsuitable for small communities.
+
+But the only reason why typical blockchains require infrastructure and are so expensive to run is because they try to execute large amount of transactions coming from all other world as fast possible and ensure with near 100% availability. But not everything requires such performance.
+
+A human-centered DAO like Fractally or Eden expresses and is ruled by human consensus. The thing about human consensus is that it is quite rare and slow. You need people gathering together and discussing and actively voting to achieve human consensus. This consensus nevertheless is the root of all trust in human-centered DAO frameworks like the one described in fractally whitepaper.
+
+So the idea is to have a blockchain that would be run at the speed of human consensus (blocks would be produced only when an organization of people signal consensus). This would make it terribly slow compared to typical blockchains, but this slowness is also its strength:
+
+* Such slow blockchains can be trivially run and validated by end-user computers instead of them relying on light client implementations and large validator nodes;
+* These blockchains can also be fully validated by normal (fast) blockchain-based smart contract platforms (Ethereum, EOS, etc);
+
+The second point further implies that smart contract platforms can recreate the full state of a DAO, from its blocks. This means that a DAO can have security of a blockchain as slow as human consensus and still deploy applications that require speed (like cryptocurrencies). Additionally, this DAO could run its applications on multiple blockchains at the same time.
+
+A working name for this pattern is "fractal blockchains" and you can read more about it [here](https://peakd.com/fractally/@sim31/fractal-blockchains). 
+
+## Solution: Part 2
+As was already mentioned autonomy of huaman-centric DAOs is only one of two problems Albedo tries to solve. Another part of albedo project is getting traditional on-chain governance and human-centric DAOs to interact so that they can help each other.
+
+Solution to this part is in research stage. A couple of work-in-progress designs can be found in these posts:
+
+* [Albedo idea in a nutshell](https://peakd.com/blockchain/@sim31/albedo-idea-in-a-nutshell)
+* [Fungibility out of non-fungible tokens](https://peakd.com/dao/@sim31/fungibility-out-of-non-fungible-tokens)
+
+## Who can benefit from this?
+Fractal blockchains solution will be useful for anyone who wants to create a decentralized human organization, but does not know anything about blockchains. It's a first step towards a seamless DAO creation where user does not even have to have a blockchain account. DAO will not even have to interact with blockchains if they don't need to (thus saving fees). In general it will enable running DAOs more cheaply (in theory consensus meetings by fractal participants could be run in totally p2p way, without requiring any infrastructure at all).
+
+For people who want their DAO to interact with existing chains, this solution will enable unprecedented level of security (see [fractal blockchains post](https://peakd.com/fractally/@sim31/fractal-blockchains) for how).
+
+In the more long-term vision, part 2 of albedo solution, if successful, will be able to decentralize existing blockchains.
+
+All products of this grant (software and documentation) will be open sourced.
+
+## Near-term goals
+Proof-of-concept of [fractal blockchains](https://peakd.com/fractally/@sim31/fractal-blockchains) idea. This will include:
+
+1. A solidity smart contract acting as validator of fractal blockchain;
+2. Measurements of cost to to run this smart contract on EVM enabled chains;
+3. Applications helping users create fractal blockchain for their DAO, validate its blocks and publish them (sign them and publish on IPFS as well as existing chains);
+4. Example smart contracts on Ethereum that use consensus of fractal chains to bootstrap other applications (to prove that fractal blockchain-based DAOs can have typical DAO components like a token);
+5. Example of fractal blockchain based naming system (see "The power of naming" in [fractal blockchains post](https://peakd.com/fractally/@sim31/fractal-blockchains));
+6. Appropriate documentation for the items above;
+
+Additionally, I will try to explore consensus reaching tools (like voting and Eden elections) for human-centric DAOs and their integration with block publishing tool (described in point 3 above).
+
+I plan posting frequent progress on these deliverables (and the project in general) [here](https://sim31.github.io/albedo-updates/).
+
+## Where can I learn more? How can I help?
+You can find more resources on Albedo [here](https://edencreators.com/albedo) (helpfully curated by [edencreators](https://pomelo.io/grants/edencreators)).
+
+If you have any questions or want to help, please join our [telegram group](https://t.me/chain_albedo).
+
+If you find this project meaningful, you can support it with a small donation on [Pomelo](https://pomelo.io/grants/albedo) (this is a [quadratic funding](https://medium.com/@PomeloGrants/the-magic-of-quadratic-funding-89b9649a6b3a) platform, so even donations of 1 EOS (~$1) are meaningful and very helpful).
+
+------------------------------------------------
+
+[^1]: By human-centric DAOs I mean DAO where the root authority is a group of unique individuals (all decision-making flows from this group). Contrast this with DAOs where root authority is token balances (e.g.: token-weighted voting), which may or may not belong to unique individuals.
+
+[^2]: https://fractally.com/whitepaper/fractally_en.pdf, p.7;
+
+[^3]: https://peakd.com/fractally/@sim31/rd2a8i
+
+
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
