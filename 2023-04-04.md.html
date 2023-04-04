@@ -1,0 +1,24 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-04-04
+## Fixed a potential security issue, that would have potentially resulted in forks;
+The problem was with allowing `confirm` function to be called from externally-owned accounts.
+
+Confirmer could call this function on say Ethereum. That confirmation will work on Ethereum but it won't be exportable outside of it. A potential fork (if enough confirmers do it for example).
+
+Checking that caller is a contract, does not protect from the same situation, but a DAO can make sure that confirmer contracts are not dependent on any state that could cause trouble like this. - So how should DAO do this? It would probably do this simply by requiring all confirmers to either have the same contract or derive from the same contract. This is like DNA being replicated in all the cells. Cells are autonomous but they must inherit the same DNA!
+
+Confirmer could call this function on say Ethereum. That confirmation will work on Ethereum but it won't be exportable outside of it. A potential fork (if enough confirmers do it for example).
+
+Checking that caller is a contract, does not protect from the same situation, but a DAO can make sure that confirmer contracts are not dependent on any state that could cause trouble like this. - So how should DAO do this? It would probably do this simply by requiring all confirmers to either have the same contract or derive from the same contract. This is like DNA being replicated in all the cells. Cells are autonomous but they must inherit the same DNA!
+
+---
+
+Continue working on some other details in smart contracts like content identifiers used to link blocks (need for that to be compatible with IPFS) and Ethereum CREATE2 addresses for FirmChains. Planning to do the latter by having a factory smart contract. 
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
