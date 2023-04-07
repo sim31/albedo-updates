@@ -1,0 +1,15 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-04-07
+Finally implemented deployment of firmchains at deterministic addresses. This means that firmchains will be able to have the same account address at all EVM chains. [It was already possible to deploy smart contracts at deterministic addresses in EVM chains](https://eips.ethereum.org/EIPS/eip-2470), but I had to figure out how it would work for FirmChains and test it.
+
+Using this feature DAOs could be founded without issuing a single transaction on-chain, while still being able to reserve an addresses in those chains. And it's the same address on all EVM chains.
+
+Also did a lot of thinking (and writing) on architecture for firmament as a whole. Now integration between IPFS and EVM is becoming a lot clearer. Basically there will be a module, which will represent a node of firmchains and it will take care of retrieval and validation of the chain (meaning it will integrate both IPFS and EVM), while presenting the fronted with a very simple interface and types that is most easy for the typical frontend applications to use.
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
