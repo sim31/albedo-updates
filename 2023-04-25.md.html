@@ -1,0 +1,13 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-04-25
+Fixed an issue with confirmations on older blocks. Previously contracts would mark the confirmer as faulty if it received its confirmation for a block which were already finalized. This would be an issue, because confirmations could be submitted later in L1 contexts.
+
+Finished testing confirmation state. Started working on the frontend to start using the new firmcore module.
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
