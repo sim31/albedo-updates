@@ -1,0 +1,17 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-05-10
+Since the last update I had a lot of thoughts about alternative designs / architectures. Observing the growing complexity prompted this (it's not anything unmanageable, but I hate writing that, when it is getting clear that better solutions exists). This lead to a decision that the first use case I will try to demonstrate will be a consensus-based version control system. Basically a DAO which would signal it's consensus directory, including all of the code to interact with it. Reason I started focusing on this is because it will allow these DAOs to more efficiently update most of the code I'm right now writing. This way once people start testing the initial version, they can gradually grow it to be the production level version, without having to completely restart the system they've already built! 
+
+Another way of saying this: it makes sense to implement version control first in order to do version control on the system itself.
+
+The amount of code that DAO depends on and cannot dynamically update through consensus, will be minimized.
+
+This should not complicate the proof-of-concept I'm currently working on too much (apart from the time already spent figuring this out).
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
