@@ -1,0 +1,24 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-05-29
+Progress over the last few weeks:
+
+## First draft of directory structure for firmchains
+This is an important step because this directory will be used for syncing between firmnodes.
+
+## Rough draft of an algorithm to sync the firmchains (discover new blocks, validate them and update state locally);
+
+## Established websocket connection between firmnode and web app;
+This will be used for streaming updates from firmnode to the web app.
+
+## Implemented deployment of smart contracts to firmnode
+Deployment means that contract is deployed to the local EVM instance of firmnode and that directory for this contract is created which contains deployment transaction and an ABI (everything that will be needed for other firmnode instances to understand and verify the chain).
+
+
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
