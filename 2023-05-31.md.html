@@ -1,0 +1,16 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-05-31
+Currently all messages sent to firmchain contracts are stored in ipfs in format, where data field (main part of the message) is encoded. I think that big advantage that IPFS offers for firmchains is that we can use all the existing IPFS gateways as block explorers, if only we make the block data human-readable. Also I will need to decode that data at some point anyway.
+
+So I'm now implementing encoding at firmnode level, based on the ABI of a contract (which is also on IPFS). All messages will be sent to firmnode in a decoded format and these messages will stored as files on IPFS in a decoded format.
+
+Also doing quite a bit of refactoring. The interface of firmnode is becoming cleaner.
+
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
