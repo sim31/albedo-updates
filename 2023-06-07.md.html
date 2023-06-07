@@ -1,0 +1,37 @@
+<meta charset=utf-8 emacsmode=-*- markdown -*-> <link rel=stylesheet href=https://casual-effects.com/markdeep/latest/journal.css?>
+
+
+# 2023-06-07 Overview of the current state of firmament project
+Over the last couple of weeks I was trying to finish a proof-of-concept of firmament that I promised as a derivable of this season.
+
+The current result is a web app that allows:
+* creating firmchains;
+* creating new blocks for them;
+* sharing them on IPFS (through an IPFS node you run locally);
+* Importing firmchains from IPFS and validating them;
+
+Currently it all works in my development environment between my devices. [All source code is on github](https://github.com/sim31/firmsignal/tree/poc) and if you want to try it as well, please write here: https://t.me/chain_albedo
+
+Previously I was planning to demonstrate and test this with more people (the app is for DAOs after all), but now I don't see much point. At this point it is already clear enough what needs to be changed, and those changes will require a rewrite of critical parts of the system. There's no point in testing things that are already obsolete.
+
+Also, big part of initial motivation for this kind of PoC was to demonstrate user experience. Well, in the current version the user experience is really not good, and I don't need more testing in order to tell me that.
+
+Some of the limitations of the current version:
+* Speed
+  * It replays the whole chain on each launching of the app. This means long loading times especially as the chains get longer. In general running [ganache node](https://github.com/trufflesuite/ganache) in the browser is quite slow.
+  * Will have to reconsider how to run EVM in this project and save it's state;
+* IPFS implementation
+  * [Old Javascript implementation of IPFS recently got deprecated and replaced by another implementation](https://blog.ipfs.tech/state-of-ipfs-in-js/). This new implementation might enable browser-to-browser IPFS nodes, which was my preferred way of using IPFS in this project from the beginning;
+* Directory structure
+  * The plan is to store firmchains as directories on IPFS. Currently this is not done properly (doing it properly would have taken too much time for a PoC);
+* No block discovery
+  * Currently to find a new block of the chain created by someone else, you have to get a link from the to that new version of the chain. To implement *automatic* block discover properly I'll need to implement directory structure properly 
+* Current implementation uses local Kubo node, which sometimes kills people's routers (they just stop and reboot usually). Something related to how many connections kubo node is trying to open. 
+
+At this point, I think it is justified to move past the PoC stage and to focus on creating a usable product. So, even though I had more ambitious goals for the PoC (for it to prove the usability aspect), it ended up being only a technical proof-of-concept of some of the features that I committed to. But I learned enough in the process and feel like I'll actually save time by focusing on a long-term product as opposed to just proving feasibility.
+
+<!-- ![Figure [create-chain]: Create chain page](resources/new-chain-form.png style=max-width:1200px) -->
+
+<style class=fallback>body{visibility:hidden}</style><script>markdeepOptions={tocStyle:'long'};</script>
+<!-- Markdeep: --><script src=https://casual-effects.com/markdeep/latest/markdeep.min.js? charset=utf-8></script>
+
